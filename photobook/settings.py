@@ -1,10 +1,10 @@
-# Django settings for myProject project.
+# Django settings for photobook project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Maxou', 'dupuy@et.esiea.fr'),
+    # ('Your Name', 'your_email@domain.com'),
 )
 
 MANAGERS = ADMINS
@@ -12,9 +12,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'projet',                      # Or path to database file if using sqlite3.
-        'USER': 'maxou',                      # Not used with sqlite3.
-        'PASSWORD': 'maxou42',                  # Not used with sqlite3.
+        'NAME': 'photobook',                      # Or path to database file if using sqlite3.
+        'USER': 'maxime',                      # Not used with sqlite3.
+        'PASSWORD': 'progweb',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -27,7 +27,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Europe/Paris'
+TIME_ZONE = 'Europe/France'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -58,7 +58,7 @@ MEDIA_URL = ''
 ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'r@=m*-%ms=4-h1n1aa7qegbzxkbsbv(kaqu$any*-pl9e+ew7)'
+SECRET_KEY = 'f*tw6lea&%kgz(u*$m20%(#r=7_b+_hriec2dv6-__)ouj6^i_'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -75,13 +75,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'myProject.urls'
+ROOT_URLCONF = 'photobook.urls'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+TEMPLATE_DIRS = ('/home/progweb/photobook/templates')
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -92,5 +88,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    'django.contrib.admindocs',
+    # 'django.contrib.admindocs',
+    'photobookengine',
 )
