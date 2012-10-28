@@ -23,4 +23,4 @@ to use django with nginx you can follow this great tutorial : http://www.dmclaug
 
 - Credit
 
-We used several tutos on the web (can't remember all of them) to do this project allowing use to discover and enjoy the incredible possibilities of python.
+We used several tutos on the web (can't remember all of them) to do this project and allowing us to discover and enjoy the incredible possibilities of python.
