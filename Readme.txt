@@ -20,6 +20,9 @@ python manage.py runserver 0.0.0.0:4242
 
 to use django with nginx you can follow this great tutorial : http://www.dmclaughlin.com/2008/11/03/complete-guide-to-deploying-django-on-ubuntu-with-nginx-fastcgi-and-mysql/
 
+- The project
+
+Please read the PDF...
 
 - Credit
 
