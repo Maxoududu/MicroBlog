@@ -1,6 +1,12 @@
 {% include 'header.html' %}
-        <div class="page">
-        <h1>{{ flatpage.title }}</h1>
-        {{ flatpage.content }}
-        </div>
+<div class="row">
+    <div class="span10 offset2">
+        <div class="well">
+        	<div class="page">
+        		<h1>{{ flatpage.title }}</h1>
+       		 	{{ flatpage.content }}
+        	</div>
+		</div>
+	</div>
+</div>		
 {% include 'footer.html' %}

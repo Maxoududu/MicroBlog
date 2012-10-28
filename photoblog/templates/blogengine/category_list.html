@@ -1,6 +1,12 @@
 {% include 'header.html' %}
-        {% for category in object_list %}
-            <h3>{{ category.title }}</h3>
-            <p>{{ category.description }}</p>
-        {% endfor %}
+<div class="row">
+    <div class="span10 offset2">
+      	<div class="well">
+    		{% for category in object_list %}
+            	<h3>{{ category.title }}</h3>
+            	<p>{{ category.description }}</p>
+        	{% endfor %}
+        </div>
+    </div>
+</div>        
 {% include 'footer.html' %}
