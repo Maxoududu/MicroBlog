@@ -37,9 +37,9 @@ def getCategory(request, categorySlug, selected_page=1):
     return render_to_response('category.html', { 'posts': returned_page.object_list, 'page': returned_page, 'category': category})
 
 class PostsFeed(Feed):
-    title = "My Django Blog posts"
+    title = "Photoblog posts"
     link = "feeds/posts/"
-    description = "Posts from My Django Blog"
+    description = "Posts from Photoblog"
 
     def items(self):
         return Post.objects.order_by('-pub_date')[:5]

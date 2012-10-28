@@ -7,12 +7,15 @@
             <div class="post">
                 <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
                 <h3>{{ post.pub_date }}</h3>
-                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}"><br/><br/>
                 {{ post.text }}
-                <h3>By {{ post.author.first_name }} {{ post.author.last_name }}</h3>
-                <h3>Categories: {% for category in post.categories.all %} {{ category.title }} {% endfor %}</h3>
+                <hr>
+                <h4>By {{ post.author.first_name }} {{ post.author.last_name }}</h4>
+                <hr>
+                <h5>Categories: {% for category in post.categories.all %} {{ category.title }} {% endfor %}</h5>
                 {% get_comment_count for post as comment_count %}
-                <h3>Comments: {{ comment_count }}</h3>
+                <hr>
+                <h6>Comments: {{ comment_count }}</h6>
                 <ol>
                 {% get_comment_list for post as comments %}
                 {% for comment in comments %}
@@ -21,6 +24,7 @@
                 {% endfor %}
                 {% render_comment_form for post %}
                 {% endfor %}
+                <hr>
             </div>
             <br />
             {% if page.has_previous %}

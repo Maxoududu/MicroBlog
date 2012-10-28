@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
-    # Home page
+    # Home page with 5 posts per page
     url(r'^(?P<page>\d+)?/?$', ListView.as_view(
         model=Post,
         paginate_by=5,
