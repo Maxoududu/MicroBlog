@@ -2,24 +2,35 @@
         {% load comments %}
         {% if object_list %}
         {% for post in object_list %}
-        <div class="post">
-        <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-        <img src="{{ post.image.url }}" alt="{{ post.title }}"></br>
-        <p>{{ post.text }}</p>
-        {% get_comment_count for post as comment_count %}
-        <h3>Comments: {{ comment_count }}</h3>
+        <div class="row">
+                <div class="span10 offset2">
+                    <div class="well">
+                        <div class="post">
+                                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-rounded"></br></br>
+                                <p>{{ post.text }}</p>
+                                {% get_comment_count for post as comment_count %}
+                                <hr>
+                                <h5>Comments: {{ comment_count }}</h3>
+                                <hr>
+                        </div>
+                        {% endfor %}
+                        <br/>
+                        {% if page_obj.has_previous %}
+                        <a href="/{{ page_obj.previous_page_number }}/">Previous Page</a>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <a href="/{{ page_obj.next_page_number }}/">Next Page</a>
+                        {% endif %}
+                        {% else %}
+                        <div class="post">
+                                <p>No posts matched</p>
+                        </div>
+                        {% endif %}
+                    </div>    
+                </div>
         </div>
-        {% endfor %}
-        <br />
-        {% if page_obj.has_previous %}
-        <a href="/{{ page_obj.previous_page_number }}/">Previous Page</a>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <a href="/{{ page_obj.next_page_number }}/">Next Page</a>
-        {% endif %}
-        {% else %}
-        <div class="post">
-        <p>No posts matched</p>
-        </div>
-        {% endif %}
+
 {% include 'footer.html' %}
+
+

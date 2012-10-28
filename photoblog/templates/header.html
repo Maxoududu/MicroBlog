@@ -1,17 +1,51 @@
 <html>
     <head>
         <title>PhotoBlog</title>
-        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+        <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+          body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+            background-image:url('/static/SoftAmbience.jpeg');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+          }
+          img {
+            max-width: 600px;
+            height: auto;
+            width: auto\9; /* ie8 */
+            align : center;
+          }
+          footer{
+            text-align:center;
+          }
+        </style>
     </head>
     <body>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
         <div id="main">
-            <h1>PhotoBlog</h1>
-                <a href="/feeds/posts/"><img src="/static/rss.png" width="50px" height="50px"></a>
-            <ul id="pageList">
-                <li><a href="/">Home</a></li>
-                {% load flatpages %}
-                {% get_flatpages as flatpages %}
-                {% for flatpage in flatpages %}
-                <li><a href="{{ flatpage.url }}">{{ flatpage.title }}</a></li>
-                {% endfor %}
-            </ul>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="/">PhotoBlog</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+                  {% load flatpages %}
+                  {% get_flatpages as flatpages %}
+                  {% for flatpage in flatpages %}
+                  <li><a href="{{ flatpage.url }}">{{ flatpage.title }}</a></li>
+                  {% endfor %}
+                  <li><a href="/admin/"><i class="icon-cog icon-white"></i> Admin</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>    
